@@ -43,6 +43,8 @@ func main() {
 
 	fullURL := fmt.Sprintf("%s/?access_token=%s", RollbarApi, cliAccessToken)
 
+	fmt.Println("[DEBUG] CHECKING ROLLBAR API")
+
 	httpResponse, err := http.Get(fullURL)
 
 	if err != nil {
@@ -74,6 +76,8 @@ func main() {
 	if lastOccurrenceTimeDiff > 3600 {
 		fmt.Println("Last error logged over an hour ago")
 		SlackAlert(lastOccurrenceTimeDiff, false)
+	} else {
+		fmt.Println("[DEBUG] API LOGS OK")
 	}
 
 }
