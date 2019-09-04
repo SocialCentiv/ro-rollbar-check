@@ -1,7 +1,7 @@
 pipeline{
     agent any
 
-    options { buildDiscarder(logRotator(numToKeepStr: '5')) }
+    options { buildDiscarder(logRotator(numToKeepStr: '10')) }
 
     environment {
         ROLLBAR_API_KEY = credentials("RespondologyRollbarReadOnlyApiKey")
