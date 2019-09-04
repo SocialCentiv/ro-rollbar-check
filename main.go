@@ -78,6 +78,7 @@ func main() {
 		SlackAlert(lastOccurrenceTimeDiff, false)
 	} else {
 		fmt.Println("[DEBUG] API LOGS OK")
+		fmt.Println("[DEBUG] Last Rollbar log ingested at", latestOccurrence)
 	}
 
 }
